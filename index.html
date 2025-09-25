@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Sistema Digestório</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Cabeçalho do jogo -->
+        <header class="game-header">
+            <h1>🍎 Jornada pelo Sistema Digestório</h1>
+            <div class="score-info">
+                <span id="current-organ">Boca</span>
+                <span id="score">Pontuação: 0</span>
+            </div>
+        </header>
+
+        <!-- Área principal do jogo -->
+        <main class="game-main">
+            <!-- Área do sistema digestório -->
+            <div class="digestive-system">
+                <div class="organ-container">
+                    <!-- Órgãos serão criados dinamicamente -->
+                </div>
+                
+                <!-- Alimento (personagem do jogador) -->
+                <div class="food-character" id="food">
+                </div>
+            </div>
+
+            <!-- Painel de informações -->
+            <div class="info-panel">
+                <div class="organ-info" id="organ-info">
+                    <div class="organ-header">
+                        <div class="organ-image-container" id="organ-image-container">
+                            <!-- Imagem do órgão será inserida aqui -->
+                        </div>
+                        <div class="organ-text">
+                            <h3 id="organ-title">Boca</h3>
+                            <p id="organ-description">A digestão começa aqui! A mastigação tritura o alimento e a saliva, rica em amilase salivar, inicia a quebra dos carboidratos complexos em açúcares mais simples.</p>
+                        </div>
+                    </div>
+                    <div class="enzymes" id="enzymes">
+                        <strong>Enzimas:</strong> Amilase Salivar
+                    </div>
+                </div>
+
+                <!-- Área de perguntas -->
+                <div class="question-panel" id="question-panel" style="display: none;">
+                    <h3>Pergunta</h3>
+                    <p id="question-text"></p>
+                    <div class="options" id="options">
+                        <!-- Opções serão criadas dinamicamente -->
+                    </div>
+                    <div class="feedback" id="feedback"></div>
+                </div>
+
+                <!-- Botões de ação -->
+                <div class="action-buttons">
+                    <button id="next-btn" class="btn btn-primary">Próximo Órgão</button>
+                    <button id="restart-btn" class="btn btn-secondary">Reiniciar</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal de vitória -->
+        <div class="modal" id="victory-modal" style="display: none;">
+            <div class="modal-content">
+                <h2>🎉 Parabéns!</h2>
+                <p>Você completou a jornada pelo sistema digestório!</p>
+                <p>O alimento foi completamente digerido e absorvido.</p>
+                <button id="play-again-btn" class="btn btn-primary">Jogar Novamente</button>
+            </div>
+        </div>
+
+        <!-- Modal de erro -->
+        <div class="modal" id="error-modal" style="display: none;">
+            <div class="modal-content">
+                <h2>❌ Resposta Incorreta</h2>
+                <p id="error-message"></p>
+                <button id="try-again-btn" class="btn btn-primary">Tentar Novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
